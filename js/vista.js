@@ -1,21 +1,11 @@
 const taskDiv = document.querySelector('#task')
+const addTask = document.querySelector('#newTask')
 
-console.log(taskDiv)
+
 function printAllTask(pTaskList, pDom) {
     
 pTaskList.forEach(task => printOneTask(task, pDom));
-
-
 }
-
-
-/* <article>
-  <h3>Study</h3>
-  <button>Remove</button>
- </article> */
-
-
-
 
 
 function printOneTask(pTaskList, pDom) {
@@ -31,6 +21,27 @@ function printOneTask(pTaskList, pDom) {
     article.appendChild(h3)
     article.appendChild(button)
     pDom.appendChild(article)
+
+}
+
+
+
+
+
+addTask.addEventListener('submit', getNewTaskData)
+function getNewTaskData(event) {
+    event.preventDefault();
+    let taskTitle = event.target.task.value
+    let taskPriority = event.target.priority.value
+    const newTask = {
+        idTask: GlobalId,
+        title: taskTitle,
+        priority: taskPriority
+    }
+    GlobalId++
+    
+    let task = taskList.push(newTask)
+    printOneTask(newTask, taskDiv)
 
 }
 

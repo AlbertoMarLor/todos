@@ -1,3 +1,4 @@
+let GlobalId = 4
 const taskList = [
 
     {
