@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,65 +13,60 @@
 <body>
 
     <header>
+        <div class="container">
+            <h1>TODO'S</h1>
+            <form action="" method="get">
+                <input type="text" name="task" placeholder="New Task">
+                <select name="priority" id="priority">URGENT</select>
+                <select name="priority" id="priority">Daily</select>
+                <select name="priority" id="priority">Monthly</select>
+                <input type="submit">Add
+            </form>
 
-        <h1>TODO'S</h1>
-        <input type="text" name="task" placeholder="New Task">
-        <select name="priority" id="priority">URGENT</select>
-        <select name="priority" id="priority">Daily</select>
-        <select name="priority" id="priority">Monthly</select>
-        <input type="submit">Add
-
-
-
+        </div>
     </header>
 
 
     <main>
+        <div class="container">
+            <section>
 
-        <section>
-            <div id="filter">
-                <select name="priority" id="priority">URGENT</select>
-                <select name="priority" id="priority">Daily</select>
-                <select name="priority" id="priority">Monthly</select>
-                <input type="text" placeholder="Search">
-            </div>
+                <div id="filter">
+                    <form action="" method="get">
+                        <select name="priority" id="priority">URGENT</select>
+                        <select name="priority" id="priority">Daily</select>
+                        <select name="priority" id="priority">Monthly</select>
+                        <input type="text" placeholder="Search">
+                </div>
+                </form>
+                <div id="task">
 
-            <div id="task">
+                    <article>
+                        <h3>Study</h3>
+                        <button>Remove</button>
+                    </article>
 
-                <article>
-                    <h3>Study</h3>
-                    <button>Remove</button>
-                </article>
+                    <article>
+                        <h3>Sleep</h3>
+                        <button>Remove</button>
+                    </article>
 
-                <article>
-                    <h3>Sleep</h3>
-                    <button>Remove</button>
-                </article>
+                    <article>
+                        <h3>Get out of Home</h3>
+                        <button>Remove</button>
+                    </article>
+                </div>
+        </div>
 
-                <article>
-                    <h3>Get out of Home</h3>
-                    <button>Remove</button>
-                </article>
-            </div>
+        <footer>
 
-            <footer>
-
-                <p> &copy Copyright 2023</p>
+            <p> &copy Copyright 2023</p>
 
 
-            </footer>
+        </footer>
 
 
         </section>
-
-
-
-
-
-
-
-
-
 
 
 
