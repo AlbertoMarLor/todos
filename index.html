@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODOS</title>
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
@@ -17,10 +18,13 @@
             <h1>TODO'S</h1>
             <form action="" method="get">
                 <input type="text" name="task" placeholder="New Task">
-                <select name="priority" id="priority">URGENT</select>
-                <select name="priority" id="priority">Daily</select>
-                <select name="priority" id="priority">Monthly</select>
-                <input type="submit">Add
+                <select name="priority" id="priority">
+                    <option value="urgent">URGENT</option>
+                    <option value="daily">Daily</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                <input type="submit">
+
             </form>
 
         </div>
@@ -33,9 +37,11 @@
 
                 <div id="filter">
                     <form action="" method="get">
-                        <select name="priority" id="priority">URGENT</select>
-                        <select name="priority" id="priority">Daily</select>
-                        <select name="priority" id="priority">Monthly</select>
+                        <select name="priority" id="priority">
+                            <option value="urgent">URGENT</option>
+                            <option value="daily">Daily</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
                         <input type="text" placeholder="Search">
                 </div>
                 </form>
