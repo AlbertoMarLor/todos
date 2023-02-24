@@ -1,6 +1,6 @@
 const taskDiv = document.querySelector('#task')
 const addTask = document.querySelector('#newTask')
-
+const filterDiv = document.querySelector('#filter')
 
 function printAllTask(pTaskList, pDom) {
     
@@ -24,10 +24,6 @@ function printOneTask(pTaskList, pDom) {
 
 }
 
-
-
-
-
 addTask.addEventListener('submit', getNewTaskData)
 function getNewTaskData(event) {
     event.preventDefault();
@@ -44,6 +40,24 @@ function getNewTaskData(event) {
     printOneTask(newTask, taskDiv)
 
 }
+
+filterDiv.addEventListener('submit', getFilterData)
+function getFilterData(event) {
+    event.preventDefault();
+    let priority = event.target.priority.value
+    let search = event.target.search.value
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 printAllTask(taskList, taskDiv)
