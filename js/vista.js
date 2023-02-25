@@ -1,22 +1,23 @@
 const taskDiv = document.querySelector('#task')
 const addTask = document.querySelector('#newTask')
 const filterDiv = document.querySelector('#filter')
+const search = document.querySelector('#search')
 
 function printAllTask(pTaskList, pDom) {
-    
+pDom.innerHTML = "";
 pTaskList.forEach(task => printOneTask(task, pDom));
 }
 
 
 function printOneTask(pTaskList, pDom) {
-    
+   
     const article = document.createElement('article')
     const h3 = document.createElement('h3')
     const button = document.createElement('button')
 
     h3.textContent = pTaskList.title
     button.textContent ='Remove'
-    //button.addEventListener('click', removeTask)
+    
 
     article.appendChild(h3)
     article.appendChild(button)
@@ -41,17 +42,16 @@ function getNewTaskData(event) {
 
 }
 
-filterDiv.addEventListener('submit', getFilterData)
-function getFilterData(event) {
-    event.preventDefault();
-    let priority = event.target.priority.value
-    let search = event.target.search.value
 
 
+search.addEventListener('input', getSearch)
+
+function getSearch(event) {
+    
+    let word = event.target.value;
+    let filterList = searchByName(taskList, word);
+    printAllTask(filterList, taskDiv);
 }
-
-
-
 
 
 
