@@ -3,6 +3,7 @@ const addTask = document.querySelector('#newTask')
 const filterDiv = document.querySelector('#filter')
 const search = document.querySelector('#search')
 const priority = document.querySelector('#priority')
+const button = document.querySelector('#button')
 
 function printAllTask(pTaskList, pDom) {
 pDom.innerHTML = "";
@@ -17,7 +18,10 @@ function printOneTask(pTaskList, pDom) {
     const button = document.createElement('button')
 
     h3.textContent = pTaskList.title
-    button.textContent ='Remove'
+    button.textContent = 'Remove'
+    button.dataset.id = pTaskList.idTask
+    button.addEventListener('click', getRemove)
+    
     
 
     article.appendChild(h3)
@@ -63,7 +67,30 @@ function getSearch(event) {
 }
 
 
+function getRemove(event) {
+    let id = parseInt(event.target.dataset.id);
 
+    let result = removeTask(taskList, id)
+    if (result.status) {
+ 
+        event.target.parentNode.remove();
+       
+        
+    } else {
+        alert(result.msg)
+    }
+}
+
+
+
+
+/* button.addEventListener('click', getRemove)
+function getRemove(event) {
+    let remove = event.target
+    let filterList = removeTask(taskList, remove)
+    
+}
+ */
 
 
 
