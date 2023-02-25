@@ -17,6 +17,7 @@ function printOneTask(pTaskList, pDom) {
     const h3 = document.createElement('h3')
     const button = document.createElement('button')
 
+    article.id = pTaskList.priority
     h3.textContent = pTaskList.title
     button.textContent = 'Remove'
     button.dataset.id = pTaskList.idTask
@@ -71,28 +72,10 @@ function getRemove(event) {
     let id = parseInt(event.target.dataset.id);
 
     let result = removeTask(taskList, id)
-    if (result.status) {
- 
-        event.target.parentNode.remove();
+    event.target.parentNode.remove();
        
-        
-    } else {
-        alert(result.msg)
-    }
 }
-
-
-
-
-/* button.addEventListener('click', getRemove)
-function getRemove(event) {
-    let remove = event.target
-    let filterList = removeTask(taskList, remove)
     
-}
- */
-
-
 
 
 
