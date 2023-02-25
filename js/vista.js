@@ -2,6 +2,7 @@ const taskDiv = document.querySelector('#task')
 const addTask = document.querySelector('#newTask')
 const filterDiv = document.querySelector('#filter')
 const search = document.querySelector('#search')
+const priority = document.querySelector('#priority')
 
 function printAllTask(pTaskList, pDom) {
 pDom.innerHTML = "";
@@ -44,8 +45,16 @@ function getNewTaskData(event) {
 
 
 
-search.addEventListener('input', getSearch)
+filterDiv.addEventListener('change', priorityFilter)
+function priorityFilter(event) {
+    let priority = event.target.value;
+    let filterList = filterByPriority(taskList, priority)
+    printAllTask(filterList, taskDiv);
+}  
 
+
+
+search.addEventListener('input', getSearch)
 function getSearch(event) {
     
     let word = event.target.value;

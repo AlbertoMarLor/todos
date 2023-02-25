@@ -18,7 +18,7 @@
         <div class="container">
             <h1>TODO'S</h1>
             <form id="newTask" action="" method="get">
-                <input type="text" name="task" placeholder="New Task">
+                <input type="text" name="task" placeholder="New Task" required>
                 <select name="priority" id="priority">
                     <option value="urgent">URGENT</option>
                     <option value="daily">Daily</option>
@@ -37,14 +37,15 @@
             <section>
 
                 <div id="filter">
-                    <form id="formfilter" action="" method="get">
-                        <select name="priority" id="priority">
-                            <option value="urgent">URGENT</option>
-                            <option value="daily">Daily</option>
-                            <option value="monthly">Monthly</option>
 
-                        </select>
-                    </form>
+                    <select id="priority">
+                        <option value="">Priority</option>
+                        <option value="urgent">URGENT</option>
+                        <option value="daily">Daily</option>
+                        <option value="monthly">Monthly</option>
+
+                    </select>
+
                     <input id="search" type="text" name="search" placeholder="Search">
                 </div>
 

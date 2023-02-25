@@ -10,13 +10,13 @@ const taskList = [
     {
         idTask: 2,
         title: 'Sleep',
-        priority: 'Daily'
+        priority: 'daily'
     },
 
      {
         idTask: 3,
         title: 'Get out of Home',
-        priority: 'Monthly'
+        priority: 'monthly'
     }
 
 
