@@ -48,7 +48,7 @@ function getNewTaskData(event) {
     localStorageList.push(newTask)
     localStorage.setItem('newtask', JSON.stringify(localStorageList));
     printOneTask(newTask, taskDiv)
-
+    event.target.reset();
 }
 
 
