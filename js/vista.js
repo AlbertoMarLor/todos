@@ -4,6 +4,7 @@ const filterDiv = document.querySelector('#filter')
 const search = document.querySelector('#search')
 const priority = document.querySelector('#priority')
 const button = document.querySelector('#button')
+const h3 = document.querySelector('h3')
 
 function printAllTask(pTaskList, pDom) {
 pDom.innerHTML = "";
@@ -74,7 +75,7 @@ function getSearch(event) {
 function getRemove(event) {
     let id = parseInt(event.target.dataset.id);
 
-    let result = removeTask(taskList, id)
+    let result = removeTask(taskList, id, h3)
     event.target.parentNode.remove();
        
 }
@@ -83,3 +84,10 @@ function getRemove(event) {
 
 
 printAllTask(taskList, taskDiv)
+
+
+
+
+    
+
+

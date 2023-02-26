@@ -9,5 +9,5 @@ function removeTask(pList, pId) {
     let posicion = pList.findIndex(task => task.idTask === pId);
         pList.splice(posicion, 1);
         
-    
+
 }
