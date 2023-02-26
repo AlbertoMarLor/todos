@@ -31,6 +31,7 @@ function printOneTask(pTaskList, pDom) {
 
 }
 
+const localStorageList = [];
 addTask.addEventListener('submit', getNewTaskData)
 function getNewTaskData(event) {
     event.preventDefault();
@@ -44,6 +45,8 @@ function getNewTaskData(event) {
     GlobalId++
     
     let task = taskList.push(newTask)
+    localStorageList.push(newTask)
+    localStorage.setItem('newtask', JSON.stringify(localStorageList));
     printOneTask(newTask, taskDiv)
 
 }
