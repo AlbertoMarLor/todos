@@ -28,7 +28,7 @@ header {
 
 main {
 
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.616);
     padding: 10px;
     height: 100vh;
 
@@ -51,26 +51,28 @@ article button {
 
     position: absolute;
     left: 85%;
+    background-color: rgba(0, 0, 0, 0.705);
+    color: white;
 
 }
 
 #urgent {
 
-    /* background-color: tomato; */
+
     border-color: tomato;
 
 }
 
 #daily {
 
-    /* background-color: yellow; */
+
     border-color: yellow;
 
 }
 
 #monthly {
 
-    /*  background-color: lightgreen; */
+
     border-color: lightgreen;
 
 }
@@ -84,6 +86,7 @@ button {
     border: 0px;
     padding: 5px;
     cursor: pointer;
+
 
 }
 
