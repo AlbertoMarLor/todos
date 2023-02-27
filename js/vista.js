@@ -9,7 +9,7 @@ const h3 = document.querySelector('h3')
 function printAllTask(pTaskList, pDom) {
 pDom.innerHTML = "";
 pTaskList.forEach(task => printOneTask(task, pDom));
-}
+} 
 
 
 function printOneTask(pTaskList, pDom) {
@@ -32,7 +32,7 @@ function printOneTask(pTaskList, pDom) {
 
 }
 
-const localStorageList = [];
+
 addTask.addEventListener('submit', getNewTaskData)
 function getNewTaskData(event) {
     event.preventDefault();
@@ -46,8 +46,7 @@ function getNewTaskData(event) {
     GlobalId++
     
     let task = taskList.push(newTask)
-    localStorageList.push(newTask)
-    localStorage.setItem('newtask', JSON.stringify(localStorageList));
+    localStorage.setItem('newtask', JSON.stringify(taskList));
     printOneTask(newTask, taskDiv)
     event.target.reset();
 }
