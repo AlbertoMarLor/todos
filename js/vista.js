@@ -6,14 +6,18 @@ const priority = document.querySelector('#priority')
 const button = document.querySelector('#button')
 const h3 = document.querySelector('h3')
 
-function printAllTask(pTaskList, pDom) {
-pDom.innerHTML = "";
-pTaskList.forEach(task => printOneTask(task, pDom));
-} 
+function printAllTask(pSection) {
+    const tasks = JSON.parse(localStorage.getItem('localTasks'));
+    if (tasks.length !== 0) {
 
+        tasks.forEach(task => printOneTask(task, pSection));
+    } else {
+        pSection.innerHTML = '<h2>NO TASK LEFT</h2>'
+    }
+}
 
 function printOneTask(pTaskList, pDom) {
-   
+
     const article = document.createElement('article')
     const h3 = document.createElement('h3')
     const button = document.createElement('button')
@@ -23,8 +27,8 @@ function printOneTask(pTaskList, pDom) {
     button.textContent = 'Remove'
     button.dataset.id = pTaskList.idTask
     button.addEventListener('click', getRemove)
-    
-    
+
+
 
     article.appendChild(h3)
     article.appendChild(button)
@@ -44,13 +48,13 @@ function getNewTaskData(event) {
         priority: taskPriority
     }
     GlobalId++
-    
-    let task = taskList.push(newTask)
-    localStorage.setItem('newtask', JSON.stringify(taskList));
-    printOneTask(newTask, taskDiv)
-    event.target.reset();
-}
 
+    let results = anadirTarea(newTask)
+    if (results) {
+        printOneTask(newTask, taskDiv);
+
+    }
+}
 
 
 filterDiv.addEventListener('change', priorityFilter)
@@ -58,13 +62,13 @@ function priorityFilter(event) {
     let priority = event.target.value;
     let filterList = filterByPriority(taskList, priority)
     printAllTask(filterList, taskDiv);
-}  
+}
 
 
 
 search.addEventListener('input', getSearch)
 function getSearch(event) {
-    
+
     let word = event.target.value;
     let filterList = searchByName(taskList, word);
     printAllTask(filterList, taskDiv);
@@ -76,17 +80,26 @@ function getRemove(event) {
 
     let result = removeTask(taskList, id, h3)
     event.target.parentNode.remove();
-       
+
 }
-    
-
-
-
-printAllTask(taskList, taskDiv)
 
 
 
 
-    
+function init() {
+    if (localStorage.getItem('localTasks') === null) {
+        localStorage.setItem('localTasks', JSON.stringify(taskList))
+    }
+    printAllTask(taskDiv);
+}
+
+init();
+
+/* printAllTask(taskList, taskDiv) */
+
+
+
+
+
 
 

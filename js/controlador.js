@@ -5,9 +5,16 @@ function searchByName(pList, pWord) {
 }
 
 function removeTask(pList, pId) {
-    
-    let posicion = pList.findIndex(task => task.idTask === pId);
-        pList.splice(posicion, 1);
-        
 
+    let posicion = pList.findIndex(task => task.idTask === pId);
+    pList.splice(posicion, 1);
+
+
+}
+
+function anadirTarea(pTask) {
+    const tasks = JSON.parse(localStorage.getItem('localTasks'));
+    tasks.push(pTask);
+    localStorage.setItem('localTasks', JSON.stringify(tasks));
+    return true;
 }
