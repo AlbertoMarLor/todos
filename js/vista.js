@@ -47,14 +47,21 @@ function getNewTaskData(event) {
         title: taskTitle,
         priority: taskPriority
     }
-    GlobalId++
-
-    let results = anadirTarea(newTask)
-    if (results) {
-        printOneTask(newTask, taskDiv);
-
-    }
+    GlobalId++;
+    taskList.push(newTask);
+    printOneTask(newTask, taskDiv);
+    localStorage.setItem('localTasks', JSON.stringify(taskList));
 }
+
+
+
+/*  let results = anadirTarea(newTask)
+ if (results) {
+     printOneTask(newTask, taskDiv);
+
+ }
+*/
+
 
 
 filterDiv.addEventListener('change', priorityFilter)
@@ -88,8 +95,10 @@ function getRemove(event) {
 
 function init() {
     if (localStorage.getItem('localTasks') === null) {
-        localStorage.setItem('localTasks', JSON.stringify(taskList))
+        localStorage.setItem('localTasks', JSON.stringify(taskList));
     }
+
+    taskList = JSON.parse(localStorage.getItem('localTasks'));
     printAllTask(taskDiv);
 }
 
