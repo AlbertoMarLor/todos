@@ -1,9 +1,3 @@
-const filterByPriority = (pList, pPriority) => pList.filter(task => task.priority.includes(pPriority));
-
-function searchByName(pList, pWord) {
-    return pList.filter(task => task.title.toLowerCase().includes(pWord.toLowerCase()));
-}
-
 function removeTask(pList, pId) {
 
 
@@ -19,3 +13,9 @@ function anadirTarea(pTask) {
     localStorage.setItem('localTasks', JSON.stringify(tasks));
     return true;
 } */
+
+const filterByPriority = (pList, pPriority) => pList.filter(task => task.priority.includes(pPriority));
+
+function searchByName(pList, pWord) {
+    return pList.filter(task => task.title.toLowerCase().includes(pWord.toLowerCase()));
+}

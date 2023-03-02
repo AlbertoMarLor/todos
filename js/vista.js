@@ -6,7 +6,7 @@ const priority = document.querySelector('#priority')
 const button = document.querySelector('#button')
 const h3 = document.querySelector('h3')
 
-function printAllTask(pSection) {
+function printAllTask(pSection,) {
     const tasks = JSON.parse(localStorage.getItem('localTasks'));
     if (tasks.length !== 0) {
 
@@ -64,22 +64,6 @@ function getNewTaskData(event) {
 
 
 
-filterDiv.addEventListener('change', priorityFilter)
-function priorityFilter(event) {
-    let priority = event.target.value;
-    let filterList = filterByPriority(taskList, priority)
-    printAllTask(filterList, taskDiv);
-}
-
-
-
-search.addEventListener('input', getSearch)
-function getSearch(event) {
-
-    let word = event.target.value;
-    let filterList = searchByName(taskList, word);
-    printAllTask(filterList, taskDiv);
-}
 
 
 function getRemove(event) {
@@ -99,7 +83,7 @@ function init() {
     }
 
     taskList = JSON.parse(localStorage.getItem('localTasks'));
-    printAllTask(taskDiv);
+    printAllTask(taskDiv, taskList);
 }
 
 init();
@@ -107,6 +91,22 @@ init();
 /* printAllTask(taskList, taskDiv) */
 
 
+filterDiv.addEventListener('change', priorityFilter)
+function priorityFilter(event) {
+    let priority = event.target.value;
+    let filterList = filterByPriority(taskList, priority)
+    printAllTask(filterList, taskDiv);
+}
+
+
+
+search.addEventListener('input', getSearch)
+function getSearch(event) {
+
+    let word = event.target.value;
+    let filterList = searchByName(taskList, word);
+    printAllTask(filterList, taskDiv);
+}
 
 
 
