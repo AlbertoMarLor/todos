@@ -6,13 +6,16 @@ const priority = document.querySelector('#priority')
 const button = document.querySelector('#button')
 const h3 = document.querySelector('h3')
 
-function printAllTask(pSection,) {
-    const tasks = JSON.parse(localStorage.getItem('localTasks'));
-    if (tasks.length !== 0) {
+function printAllTask(pTaskList, pSection) {
 
-        tasks.forEach(task => printOneTask(task, pSection));
+    pSection.innerHTML = '';
+    if (pTaskList.length > 0) {
+
+        pTaskList.forEach(task => printOneTask(task, pSection));
+
     } else {
         pSection.innerHTML = '<h2>NO TASK LEFT</h2>'
+
     }
 }
 
@@ -51,6 +54,7 @@ function getNewTaskData(event) {
     taskList.push(newTask);
     printOneTask(newTask, taskDiv);
     localStorage.setItem('localTasks', JSON.stringify(taskList));
+    event.target.reset()
 }
 
 
@@ -83,7 +87,7 @@ function init() {
     }
 
     taskList = JSON.parse(localStorage.getItem('localTasks'));
-    printAllTask(taskDiv, taskList);
+    printAllTask(taskList, taskDiv);
 }
 
 init();
